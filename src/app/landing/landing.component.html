@@ -1,0 +1,113 @@
+<style>
+    .navbar {
+      background-color: #87CEEB !important;
+    }
+  
+    .navbar-brand {
+      font-size:30px;
+      margin-left: 10px;
+    }
+  
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 92vh;
+      background-color: #F0F8FF;
+    }
+  
+    .logo {
+      width: 120px;
+      /* Increased logo size */
+      height: auto;
+      margin-bottom: 20px;
+    }
+  
+    .title {
+      font-size: 32px;
+      /* Increased title font size */
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #4682B4;
+    }
+  
+    .subtitle {
+      font-size: 20px;
+      /* Increased subtitle font size */
+      text-align: center;
+      max-width: 700px;
+      /* Increased max-width to accommodate larger text */
+      margin-bottom: 25px;
+    }
+  
+    .button-group {
+      display: flex;
+      gap: 100px;
+    }
+  
+    .people-icons {
+      object-fit: cover;
+      height: 180px;
+      width: 300px;
+    }
+  
+    .main-btn {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      width: 7vw;
+      height: 50px;
+    }
+  
+    .navbar-nav {
+      color: #2A3D45 !important;
+      font-size: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+  </style>
+  
+  <nav class="navbar navbar-expand-lg" style="border-bottom: 5px solid #137EB9;">
+    <div class="container-fluid ms-5">
+      <img src="autism-ribbon.png" class="mx-2" alt="Autism Ribbon" height="36"> <!-- Increased height -->
+      <a class="navbar-brand">AutiCare</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" href="/landing">Home</a>
+          <a class="nav-link" href="/about">Sobre</a>
+          <a class="nav-link">Funcionalidades</a>
+          <a class="nav-link">Quem somos nós</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container-fluid position-relative">
+    <div class="position-absolute top-0 end-0 mt-3 me-3">
+      <a style="text-decoration: none;" href="/help">
+        <div class="text-center">
+          <img src="question.svg" height="50" alt="Help">
+          <br>
+          <span class="fs-5 fw-semibold text-secondary">Ajuda</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  
+  <div class="main-content">
+    <img src="autism-ribbon.png" alt="AutiCare Logo" class="logo">
+    <h1 class="title">AutiCare - Conectando Cuidado e Compreensão para o TEA.</h1>
+    <p class="subtitle">Pergunte ao AutiCare e obtenha orientações sobre crises, tratamentos, recomendações e muito mais!
+    </p>
+    <div class="button-group">
+      <button style="background-color: #2A3D45; color: white;" class="btn main-btn rounded-pill">ENTRAR</button>
+      <button style="background-color: #49D346; color: white;" class="btn main-btn rounded-pill">CADASTRAR</button>
+    </div>
+    <div>
+      <img src="rainbow-people.svg" class="people-icons" alt="Rainbow People" />
+    </div>
+  </div>
