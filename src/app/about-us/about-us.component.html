@@ -13,7 +13,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 92vh;
+        height: 127vh;
         background-color: #F0F8FF;
     }
 
@@ -24,22 +24,6 @@
         margin-bottom: 20px;
     }
 
-    .title {
-        font-size: 32px;
-        /* Increased title font size */
-        font-weight: bold;
-        margin-bottom: 15px;
-        color: #4682B4;
-    }
-
-    .subtitle {
-        font-size: 20px;
-        /* Increased subtitle font size */
-        text-align: center;
-        max-width: 700px;
-        /* Increased max-width to accommodate larger text */
-        margin-bottom: 25px;
-    }
 
     .button-group {
         display: flex;
@@ -70,11 +54,35 @@
         width: 100%;
     }
 
-    .menino {
-        object-fit: cover;
-        height: 400px;
-        width: 300px;
+    .quem-somos {
+        text-align: center;
     }
+    
+    .quem-somos img {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 20px;
+    }
+    
+    .quem-somos h1 {
+        font-size: 2.5rem;
+        color: #0077cc;
+        margin-bottom: 20px;
+    }
+    
+    .quem-somos p {
+        font-size: 1.5rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+ p {
+    text-align: justify; /* Justifica o texto */
+}
+
+.quem-somos {
+    margin: 200px; /* Margem ao redor da seção */
+}
 </style>
 
 <nav class="navbar navbar-expand-lg" style="border-bottom: 5px solid #137EB9;">
@@ -86,7 +94,7 @@
                 <a class="nav-link" aria-current="page" href="/landing">Home</a>
                 <a class="nav-link" href="/about">Sobre</a> 
                 <a class="nav-link">Funcionalidades</a>
-                <a class="nav-link" href="/about-us">Quem somos nós</a>
+                <a class="nav-link">Quem somos nós</a>
             </div>
         </div>
     </div>
@@ -105,20 +113,17 @@
 </div>
 
 <div class="main-content">
-    <div class="flex">
-        <div>
-            <img src="menino.png" class="menino" alt="menino simbolo autism" />
-        </div>
-        <div>
-            <h1>AutiCare - Sobre</h1>
-            <p>O “AutiCare” é um chatbot interativo e fácil de usar deve ser criado para ajudar as pessoas com
-                Transtorno do
-                Espectro Autista (TEA), seus cuidadores e outros interessados, ajudando na comunicação, fornecendo
-                informações sobre tratamentos e sugerindo locais de apoio especializado. Facilitar a comunicação com
-                portadores de TEA e seus cuidadores, promovendo a compreensão dos diferentes níveis e sinais precoces do
-                transtorno.</p>
-        </div>
-    </div>
-    <div>
+    <main>
+        <section class="quem-somos">
+            <img src="hands-about-us.jpeg" alt="Banner de Mãos Coloridas">
+            <h1><b>Quem somos nós</b></h1>
+            <p>Somos um grupo de alunos do Centro Universitário Facens, atualmente cursando o quarto semestre de Análise e Desenvolvimento de Sistemas. Neste semestre, desenvolvemos nosso projeto na disciplina de Startup One, onde nosso objetivo foi criar uma ferramenta inovadora para um problema real. Assim nasceu o AutiCare, um chatbot projetado para apoiar pessoas com Transtorno do Espectro Autista (TEA), seus cuidadores, familiares e profissionais de saúde.</p>
+            <p>Nosso foco é oferecer uma plataforma acessível e eficiente que permita a todos os envolvidos com o TEA receberem orientações personalizadas e suporte contínuo. O AutiCare fornece funcionalidades como tratamento de crises, recomendações sobre alimentação e medicamentos, informações sobre instituições de apoio, e ideias de comunicação com portadores de TEA. Além disso, é possível acessar artigos e documentos relacionados ao TEA, assim como acompanhar notícias recentes sobre o tema.</p>
+            <p>Nosso compromisso é facilitar o cuidado e melhorar a qualidade de vida das pessoas com TEA, utilizando tecnologia para criar um ambiente de suporte e informações confiáveis.</p>
+        </section>
+    </main>
+    <footer>
         <img src="rainbow-people.svg" class="people-icons" alt="Rainbow People" />
-    </div>
+    </footer>
+
+    
