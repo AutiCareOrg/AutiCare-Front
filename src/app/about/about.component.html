@@ -1,92 +1,13 @@
-<style>
-    .navbar {
-        background-color: #87CEEB !important;
-    }
-
-    .navbar-brand {
-        font-size: 30px;
-        margin-left: 10px;
-    }
-
-    .main-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 92vh;
-        background-color: #F0F8FF;
-    }
-
-    .logo {
-        width: 120px;
-        /* Increased logo size */
-        height: auto;
-        margin-bottom: 20px;
-    }
-
-    .title {
-        font-size: 32px;
-        /* Increased title font size */
-        font-weight: bold;
-        margin-bottom: 15px;
-        color: #4682B4;
-    }
-
-    .subtitle {
-        font-size: 20px;
-        /* Increased subtitle font size */
-        text-align: center;
-        max-width: 700px;
-        /* Increased max-width to accommodate larger text */
-        margin-bottom: 25px;
-    }
-
-    .button-group {
-        display: flex;
-        gap: 100px;
-    }
-
-    .people-icons {
-        object-fit: cover;
-        height: 180px;
-        width: 300px;
-    }
-
-    .main-btn {
-        color: white;
-        font-size: 18px;
-        font-weight: bold;
-        width: 7vw;
-        height: 50px;
-    }
-
-    .navbar-nav {
-        color: #2A3D45 !important;
-        font-size: 25px;
-        font-weight: bold;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-    }
-
-    .menino {
-        object-fit: cover;
-        height: 400px;
-        width: 300px;
-    }
-</style>
-
-<nav class="navbar navbar-expand-lg" style="border-bottom: 5px solid #137EB9;">
+<nav class="navbar navbar-expand-lg" style="background-color: #87CEEB; border-bottom: 5px solid #137EB9;">
     <div class="container-fluid ms-5">
-        <img src="autism-ribbon.png" class="mx-2" alt="Autism Ribbon" height="36"> <!-- Increased height -->
-        <a class="navbar-brand">AutiCare</a>
+        <img src="autism-ribbon.png" class="mx-2" alt="Autism Ribbon" height="36">
+        <a class="navbar-brand fs-2">AutiCare</a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" aria-current="page" href="/landing">Home</a>
-                <a class="nav-link" href="/about">Sobre</a> 
-                <a class="nav-link">Funcionalidades</a>
-                <a class="nav-link" href="/about-us">Quem somos nós</a>
+            <div class="navbar-nav w-100 justify-content-around">
+                <a class="nav-link fs-4 fw-bold" aria-current="page" href="/landing">Home</a>
+                <a class="nav-link fs-4 fw-bold" href="/about">Sobre</a>
+                <a class="nav-link fs-4 fw-bold" href="/funcionalidades">Funcionalidades</a>
+                <a class="nav-link fs-4 fw-bold" href="/about-us">Quem somos nós</a>
             </div>
         </div>
     </div>
@@ -94,7 +15,7 @@
 
 <div class="container-fluid position-relative">
     <div class="position-absolute top-0 end-0 mt-3 me-3">
-        <a style="text-decoration: none;" href="/help">
+        <a class="text-decoration-none" href="/help">
             <div class="text-center">
                 <img src="question.svg" height="50" alt="Help">
                 <br>
@@ -104,21 +25,23 @@
     </div>
 </div>
 
-<div class="main-content">
-    <div class="flex">
-        <div>
-            <img src="menino.png" class="menino" alt="menino simbolo autism" />
+<div class="container-fluid d-flex align-items-center"
+    style="background-color: #F0F8FF; min-height: calc(100vh - 70px);">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-5">
+            <img src="menino.png" class="img-fluid" alt="menino simbolo autism"
+                style="max-height: 450px; object-fit: cover;" />
         </div>
-        <div>
-            <h1>AutiCare - Sobre</h1>
-            <p>O “AutiCare” é um chatbot interativo e fácil de usar deve ser criado para ajudar as pessoas com
-                Transtorno do
-                Espectro Autista (TEA), seus cuidadores e outros interessados, ajudando na comunicação, fornecendo
-                informações sobre tratamentos e sugerindo locais de apoio especializado. Facilitar a comunicação com
-                portadores de TEA e seus cuidadores, promovendo a compreensão dos diferentes níveis e sinais precoces do
-                transtorno.</p>
+        <div class="col-md-5 col-sm-4">
+            <h1 class="display-5 fw-bold mb-5" style="color: #137EB9;">AutiCare - Sobre</h1>
+            <p class="fs-4" style="color: #2A3D45;">O "AutiCare" é um chatbot interativo e de fácil utilização, criado
+                para auxiliar pessoas com Transtorno do Espectro Autista (TEA), seus cuidadores e interessados. Ele
+                ajuda na comunicação, fornece informações sobre tratamentos e sugere locais de apoio especializado,
+                promovendo a compreensão dos diferentes níveis e sinais precoces do transtorno.</p>
+        </div>
+        <div class="col-md-10 text-center mt-3">
+            <img src="rainbow-people.svg" class="img-fluid" alt="Rainbow People"
+                style="height: 80px; width: 180px; object-fit: cover;" />
         </div>
     </div>
-    <div>
-        <img src="rainbow-people.svg" class="people-icons" alt="Rainbow People" />
-    </div>
+</div>
