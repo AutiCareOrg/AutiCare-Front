@@ -1,5 +1,6 @@
 <div class="d-flex flex-column vh-100">
-  <div class="d-flex justify-content-between align-items-center" style="background-color: #87CEEB; border-bottom: 5px solid #137EB9; padding: 10px;">
+  <div class="d-flex justify-content-between align-items-center"
+    style="background-color: #87CEEB; border-bottom: 5px solid #137EB9; padding: 10px;">
     <div class="d-flex align-items-center">
       <img src="autism-ribbon.png" alt="Auticare Logo" height="36" class="me-2">
       <span class="navbar-brand mb-0 h1">Auticare</span>
@@ -30,18 +31,59 @@
         </li>
       </ul>
     </div>
-    <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center position-relative">
-      <img src="autism-ribbon.png" alt="Autism Ribbon" class="mb-4" style="height: 100px; opacity: 0.5;">
-      <div class="position-absolute bottom-0 mb-3" style="width: 80%;">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Envie sua mensagem" aria-label="Envie sua mensagem">
-          <button class="btn btn-outline-secondary" type="button">
-            <i class="bi bi-send"></i>
-          </button>
+    <div class="chat-container flex-grow-1 d-flex flex-column">
+      <div class="messages-area flex-grow-1 overflow-auto p-3">
+        <div class="chat-intern-container">
+          <img src="autism-ribbon.png" alt="Autism Ribbon" class="mb-4 ribbon" style="height: 100px; opacity: 0.5;">
+          <div class="messages-list" *ngFor="let message of messages">
+            <div class="row mb-3">
+              <div class="col-12 align-items-end" [ngClass]="message.sender === 'User' ? 'd-flex justify-content-end' : 'd-flex  justify-content-start'">
+                <div class="message-bubble" [ngClass]="{'assistant-message': message.sender === 'Assistant',
+                                'user-message': message.sender === 'User'}">
+                  <div class="message-content" [innerHTML]="message.content"></div>
+                  <small class="message-timestamp text-muted">
+                    {{ message.timestamp | date:'short' }}
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3" *ngIf="isLoading">
+            <div class="col-12 d-flex justify-content-start">
+              <div class="message-bubble assistant-message">
+                <div class="loading-indicator">
+                  <span class="spinner-border spinner-border-sm me-2"></span>
+                  Digitando...
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="error-message" *ngIf="error">
+            {{ error }}
+          </div>
         </div>
-        <p class="text-center text-secondary mt-2" style="font-size: 0.9rem;">
-          Ao enviar mensagens para o AutiCare, você aceita nossos Termos e declara ter lido nossa Política de Privacidade.
-        </p>
+      </div>
+
+      <div class="input-area mt-auto p-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex flex-column align-items-center">
+                <div class="input-group">
+                  <input type="text" [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" class="form-control"
+                    placeholder="Envie sua mensagem..." [disabled]="isLoading" />
+                  <button (click)="sendMessage()" class="btn btn-outline-primary" type="button" [disabled]="isLoading">
+                    <i class="fa fa-paper-plane"></i>
+                  </button>
+                </div>
+                <p class="text-center text-secondary mt-2" style="font-size: 0.9rem;">
+                  Ao enviar mensagens para o AutiCare, você aceita nossos Termos e declara ter lido nossa Política de
+                  Privacidade.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
