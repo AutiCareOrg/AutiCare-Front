@@ -33,22 +33,18 @@
     </div>
     <div class="chat-container flex-grow-1 d-flex flex-column">
       <div class="messages-area flex-grow-1 overflow-auto p-3">
-        <div class="chat-intern-container">
+        <div class="chat-intern-container col-12 px-5">
           <img src="autism-ribbon.png" alt="Autism Ribbon" class="mb-4 ribbon" style="height: 100px; opacity: 0.5;">
-          <div class="messages-list" *ngFor="let message of messages">
+          <div class="messages-list">
             <div class="row mb-3">
-              <div class="col-12 align-items-end" [ngClass]="message.sender === 'User' ? 'd-flex justify-content-end' : 'd-flex  justify-content-start'">
-                <div class="message-bubble" [ngClass]="{'assistant-message': message.sender === 'Assistant',
-                                'user-message': message.sender === 'User'}">
-                  <div class="message-content" [innerHTML]="message.content"></div>
-                  <small class="message-timestamp text-muted">
-                    {{ message.timestamp | date:'short' }}
-                  </small>
+              <div class="col-12 align-items-end d-flex justify-content-end">
+                <div class="message-bubble user-message">
+                  <div class="message-content" >Olá tudo bem, fio?</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row mb-3" *ngIf="isLoading">
+          <div class="row mb-3">
             <div class="col-12 d-flex justify-content-start">
               <div class="message-bubble assistant-message">
                 <div class="loading-indicator">
@@ -72,8 +68,8 @@
                 <div class="input-group">
                   <input type="text" [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" class="form-control"
                     placeholder="Envie sua mensagem..." [disabled]="isLoading" />
-                  <button (click)="sendMessage()" class="btn btn-outline-primary" type="button" [disabled]="isLoading">
-                    <i class="fa fa-paper-plane"></i>
+                  <button (click)="sendMessage()" class="btn btn-primary" type="button" [disabled]="isLoading">
+                    <ng-icon name="tablerMessage"></ng-icon>
                   </button>
                 </div>
                 <p class="text-center text-secondary mt-2" style="font-size: 0.9rem;">

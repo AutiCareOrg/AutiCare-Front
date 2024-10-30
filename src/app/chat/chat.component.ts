@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ChatService } from '../services/chat.service';
 import { firstValueFrom } from 'rxjs';
+import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { tablerMessage } from '@ng-icons/tabler-icons';
 
 interface ChatMessage {
   sender: 'User' | 'Assistant';
@@ -15,8 +17,10 @@ interface ChatMessage {
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    NgIconComponent
   ],
+  providers: [provideIcons({ tablerMessage })],
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
@@ -26,11 +30,11 @@ export class ChatComponent {
   isLoading = false;
   error: string | null = null;
 
-  constructor(private chatService: ChatService) {}
+  constructor(private chatService: ChatService) { }
 
   async sendMessage(): Promise<void> {
     const trimmedMessage = this.userMessage.trim();
-    
+
     if (!trimmedMessage) {
       return;
     }
@@ -45,7 +49,7 @@ export class ChatComponent {
       const response = await firstValueFrom(
         this.chatService.sendMessage(trimmedMessage)
       );
-      
+
       if (response) {
         this.addMessage('Assistant', response.response);
         console.log(this.messages)
@@ -82,8 +86,8 @@ export class ChatComponent {
     let formattedResponse = response
       .replace(/(\*\*([^*]+)\*\*)/g, '<strong>$2</strong>')
       .replace(/\n\n(\d+\.)/g, '<br><br><strong>$1</strong>')
-      .replace(/\n/g, '<br>'); 
-    
+      .replace(/\n/g, '<br>');
+
     return formattedResponse;
   }
 }
