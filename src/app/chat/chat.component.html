@@ -35,16 +35,21 @@
       <div class="messages-area flex-grow-1 overflow-auto p-3">
         <div class="chat-intern-container col-12 px-5">
           <img src="autism-ribbon.png" alt="Autism Ribbon" class="mb-4 ribbon" style="height: 100px; opacity: 0.5;">
-          <div class="messages-list">
+          <div class="messages-list" *ngFor="let message of messages">
             <div class="row mb-3">
-              <div class="col-12 align-items-end d-flex justify-content-end">
-                <div class="message-bubble user-message">
-                  <div class="message-content" >Olá tudo bem, fio?</div>
+              <div class="col-12 align-items-end"
+                [ngClass]="message.sender === 'User' ? 'd-flex justify-content-end' : 'd-flex  justify-content-start'">
+                <div class="message-bubble" [ngClass]="{'assistant-message': message.sender === 'Assistant',
+                                'user-message': message.sender === 'User'}">
+                  <div class="message-content" [innerHTML]="message.content"></div>
+                  <small class="message-timestamp text-muted">
+                  {{ message.timestamp | date:'short' }}
+                  </small>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row mb-3">
+          <div class="row mb-3" *ngIf="isLoading">
             <div class="col-12 d-flex justify-content-start">
               <div class="message-bubble assistant-message">
                 <div class="loading-indicator">
