@@ -17,7 +17,7 @@ export const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'funcionalidades', component: FuncionalidadesComponent },
     { path: 'chat', component: ChatComponent },
-    { path: 'artigo', component: ArtigoComponent }, // Adicionar rota para ArtigoComponent
+    { path: 'artigos', component: ArtigoComponent }, // Adicionar rota para ArtigoComponent
     { path: 'noticia', component: NoticiaComponent }, // Adicionar rota para NoticiaComponent
     { path: '', redirectTo: '/landing', pathMatch: 'full' }
 ];
