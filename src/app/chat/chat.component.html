@@ -24,10 +24,10 @@
           <a class="nav-link text-white" href="#">Nova Conversa</a>
         </li>
         <li class="nav-item mb-2">
-          <a class="nav-link text-white" href="#">Artigos e Documentos</a>
+          <a class="nav-link text-white" href="/AutiCare-Front/src/app/artigo/">Artigos e Documentos</a>
         </li>
         <li class="nav-item mb-2">
-          <a class="nav-link text-white" href="#">Notícias</a>
+          <a class="nav-link text-white" href="/AutiCare-Front/src/app/noticia/">Notícias</a>
         </li>
       </ul>
     </div>
@@ -43,7 +43,7 @@
                                 'user-message': message.sender === 'User'}">
                   <div class="message-content" [innerHTML]="message.content"></div>
                   <small class="message-timestamp text-muted">
-                  {{ message.timestamp | date:'short' }}
+                    {{ message.timestamp | date:'short' }}
                   </small>
                 </div>
               </div>
