@@ -12,6 +12,12 @@ interface ChatMessage {
   timestamp?: Date;
 }
 
+interface MessageContent {
+  text: {
+    value: string;
+  }
+}
+
 @Component({
   selector: 'app-chat',
   standalone: true,
@@ -51,7 +57,7 @@ export class ChatComponent {
       );
 
       if (response) {
-        this.addMessage('Assistant', response.response);
+        this.addMessage('Assistant', response);
         console.log(this.messages)
       }
 
@@ -63,13 +69,19 @@ export class ChatComponent {
     }
   }
 
-  private addMessage(sender: ChatMessage['sender'], content: string): void {
-    content = this.formatMessage(content)
+  private addMessage(sender: ChatMessage['sender'], content: MessageContent | string): void {
+    const messageContent = typeof content === 'object' && 'text' in content 
+      ? content.text.value 
+      : content;
+  
+    const formattedContent = this.formatMessage(messageContent);
+    
     this.messages.push({
       sender,
-      content,
+      content: formattedContent,
       timestamp: new Date()
     });
+    
     this.scrollToBottom();
   }
 
