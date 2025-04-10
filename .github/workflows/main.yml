@@ -14,4 +14,4 @@ jobs:
         with:
           name: syhunt-report
           path: report.pdf
-          if-no-files-found: error  # Caso o arquivo não seja encontrado, retorna erro
+          if-no-files-found: error  
