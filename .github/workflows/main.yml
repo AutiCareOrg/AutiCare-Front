@@ -1,4 +1,3 @@
-
 name: syhunt test
 on:
   push:
@@ -12,8 +11,7 @@ jobs:
       - run: Start-CodeScan -pfcond 'fail-if:risk=mediumup' -output 'report.pdf'
       - name: 'Syhunt Report'
         uses: actions/upload-artifact@v2
-        if: failure()
         with:
-         name: syhunt-report
-         path: report.pdf
-         if-no-files-found: error
+          name: syhunt-report
+          path: report.pdf
+          if-no-files-found: error  # Caso o arquivo não seja encontrado, retorna erro
